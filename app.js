@@ -81,3 +81,36 @@ console.log(player);
 
 
 
+// function 함수명(argument){ 실행블록 }
+// argument는 여러개 받을 수 있음 
+// nameOfPerson과 age는 sayHello라는 function의 body에만 존재
+function sayHello(nameOfPerson, age){
+    console.log("Hello! my name is " + nameOfPerson + " and I'm " + age);
+}
+// 함수명(argument);
+sayHello("nico", 10);
+sayHello("dal", 23);
+sayHello("lynn", 21);
+
+// argument를 받는 순서도 중요
+function plus(firstNumber, secondNumber){
+    console.log(firstNumber + secondNumber);
+}
+function divide(a, b){
+    console.log(a / b);
+}
+plus(2, 5);
+divide(98, 20);
+
+
+// object안에서 function을 만들 때
+const player = {
+    name: "dada",
+    sayHello: function(otherPersonsName){
+        console.log("hello " + otherPersonsName + " nice to meet you!");
+    },
+};
+
+console.log(player.name);
+// object안에 function이 있을 경우만 xx.xxx로 사용 가능
+player.sayHello("lynn");
