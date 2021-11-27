@@ -80,7 +80,7 @@ console.log(player);
 */
 
 
-
+/* #2.7
 // function 함수명(argument){ 실행블록 }
 // argument는 여러개 받을 수 있음 
 // nameOfPerson과 age는 sayHello라는 function의 body에만 존재
@@ -114,3 +114,111 @@ const player = {
 console.log(player.name);
 // object안에 function이 있을 경우만 xx.xxx로 사용 가능
 player.sayHello("lynn");
+*/
+
+/* #2.9 #2.10
+const toBuy = ["potato", "tomato", "pizza"];
+toBuy[2] = "water";
+console.log(toBuy);
+toBuy.push("meat");
+console.log(toBuy);
+
+
+const player = {
+    name: "Nico",
+    age: 98,
+};
+console.log(player);
+player.name = "nicolas";
+console.log(player);
+player.sexy = "soon";
+console.log(player);
+
+
+
+function minusFive(first, second) {
+    console.log(first - 5);
+}
+
+minusFive(5, 10, 23, 54, 7);
+*/
+
+
+/*
+// 계산기 만들기(console.log -> alert )
+const calculator = {
+    add: function(a, b) {
+        alert(a + b);
+    },
+    minus: function (a, b) {
+        alert(a - b);
+    },
+    times: function (a, b) {
+        alert(a * b);
+    },
+    divide: function(a, b) {
+        alert(a / b);
+    },
+    powerOf: function(a, b) {
+        alert(a**b);
+    },
+};
+
+calculator.add(4, 7);
+calculator.minus(9, 4);
+calculator.times(4, 3)
+calculator.divide(10, 4);
+calculator.powerOf(2, 3);
+*/
+
+
+
+/* #2.11 ~ #2.12
+// function의 바디에서의 결과값을 밖으로 가지고 나갈 수 없다
+// 하지만 return을 사용하면 function 안에서의 결과값을 반환
+// 한번 return 하면 function은 끝남(return 뒤의 코드는 실행되지 않음)
+const age = 96;
+function calculateKrAge(ageOfForeigner) {
+    return ageOfForeigner + 2;
+}
+
+const krAge = calculateKrAge(age);
+
+console.log(krAge);
+
+const calculator = {
+    add: function(a, b) {
+        return a + b;
+    },
+    minus: function (a, b) {
+        return a - b;
+    },
+    times: function (a, b) {
+        return a * b;
+    },
+    divide: function(a, b) {
+        return a / b;
+    },
+    powerOf: function(a, b) {
+        return a ** b;
+    },
+};
+
+const addResult = calculator.add(2, 3);
+const minusResult = calculator.minus(addResult, 10);
+const timesResult = calculator.times(10, minusResult);
+const divideResult = calculator.divide(timesResult, addResult);
+const powerResult = calculator.powerOf(divideResult, minusResult)
+*/
+
+
+
+const age = parseInt( prompt("How old are you?") );
+
+if (isNaN(age)) {
+    // condition === true
+    console.log("please write a number");
+} else {
+    // condition === false
+    console.log("Thank you for writing your age.")
+}
