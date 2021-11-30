@@ -211,14 +211,52 @@ const divideResult = calculator.divide(timesResult, addResult);
 const powerResult = calculator.powerOf(divideResult, minusResult)
 */
 
-
-
+/* #2.14 ~ #2.15
+// if문 
 const age = parseInt( prompt("How old are you?") );
 
-if (isNaN(age)) {
-    // condition === true
-    console.log("please write a number");
-} else {
-    // condition === false
-    console.log("Thank you for writing your age.")
+// if (isNaN(age)) {
+//     // condition === true
+//     console.log("please write a number.");
+// } else {
+//     // condition === false
+//     console.log("Thank you for writing your age.")
+// }
+
+
+true || true === true
+false || true === true
+true || false === true
+false || false === false
+
+true && true === true
+false && true === false
+true && false === false
+false && false === false
+
+
+if (isNaN(age) || age < 0) {
+    console.log("Please write a real positive number.");
+} else if (age < 18) {
+    // 18세 미만
+    console.log("You are too youg to drink.");
+} else if (age >= 18 && age <= 50) {
+    // 18세 이상 50세 미만
+    // && -> AND 조건이 둘 다 true일 경우만 출력
+    // || -> OR 조건이 하나만 true여도 출력
+    console.log("You can drink.");
+} else if (age > 50 && age <= 80) {
+    console.log("You should exercise.");
+} else if (age === 100){
+    // age === 100 일치할 경우 
+    // age !== 100 일치하지 않을 경우
+    console.log("wow you are wise.")
+} else if (age > 80) {
+    console.log("You can do whatever you want.");
+} 
+
+
+if ((a && b) || (c && d)) {
+    // c && d 먼저 계산   
 }
+*/
