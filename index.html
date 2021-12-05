@@ -5,12 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Momemtum App</title>
+    <title>Momentum App</title>
   </head>
   <body>
-    <div class="hello">
-      <h1 class="sexy-font">Click me!</h1>
-    </div>
+    <form id="login-form">
+      <!-- input을 form 안에 넣었을 경우 엔터를 누를때마다 form은 자동적으로 submit -->
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="What is your name?"
+      />
+      <input type="submit" value="Log in" />
+    </form>
     <script src="app.js"></script>
   </body>
 </html>
