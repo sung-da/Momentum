@@ -46,6 +46,8 @@ const quotes = [
 const quote = document.querySelector("#quote span:first-child");
 const author = document.querySelector("#quote span:last-child");
 
+// Math.random() * 랜덤의 범위(개수)
+// Math.floor() 주어진 숫자와 같거나 작은 정수 중에서 가장 큰 수 반환
 const todayQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 quote.innerText = todayQuote.quote;
