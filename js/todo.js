@@ -5,8 +5,8 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
 
-// newTodo를 저장할 array 생성
-const toDos = [];
+// newTodo를 저장할 array 생성(let을 써서 업데이트 가능하게 함)
+let toDos = [];
 
 // toDos array의 내용을 localStorage에 저장
 function saveToDos() {
@@ -50,18 +50,13 @@ function handleToDoSubmit(event) {
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
-// function sayHello(item) {
-//   console.log("this is the turn of", item);
-// }
-
 // localStorage에 저장된 todos 가져오기
 const savedToDos = localStorage.getItem(TODOS_KEY);
 console.log(savedToDos);
 if (savedToDos !== null) {
   // string으로 된 savedTodos를 JavaScript object로 바꿔줌
   const parsedToDos = JSON.parse(savedToDos);
+  toDos = parsedToDos;
   // forEach는 array의 각 item에 대해 function을 실행
-  // parsedToDos.forEach(sayHello);
-  // 아래의 것(화살표 함수(arrow function))과 위의 것은 같은 내용임
-  parsedToDos.forEach((item) => console.log("this is the turn of ", item));
+  parsedToDos.forEach(paintToDo);
 }
