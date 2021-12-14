@@ -22,13 +22,18 @@ function deleteToDo(event) {
   // console.log(event.target.parentElement.innerText);
   const li = event.target.parentElement;
   li.remove();
+  // filter는 값이 false인 것을 제외하고 true인 것으로만 새로운 array에 저장
+  // 클릭한 li.id와 다른 toDo만 남겨둠
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  saveToDos();
 }
 
 // list(li)를 만들어서 HTML의 ul에 추가
 function paintToDo(newTodo) {
   const li = document.createElement("li");
+  li.id = newTodo.id;
   const span = document.createElement("span");
-  span.innerText = newTodo;
+  span.innerText = newTodo.text;
   const button = document.createElement("button");
   button.innerText = "❌";
   button.addEventListener("click", deleteToDo);
@@ -43,8 +48,13 @@ function handleToDoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value; // input의 현재 value를 새로운 변수에 복사
   toDoInput.value = "";
-  toDos.push(newTodo); // toDos array에 newTodo push
-  paintToDo(newTodo);
+  // newTodo를 object 형태로 만듦
+  const newTodoObj = {
+    text: newTodo,
+    id: Date.now(),
+  };
+  toDos.push(newTodoObj); // toDos array에 newTodoObj push
+  paintToDo(newTodoObj);
   saveToDos();
 }
 
@@ -52,7 +62,7 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 
 // localStorage에 저장된 todos 가져오기
 const savedToDos = localStorage.getItem(TODOS_KEY);
-console.log(savedToDos);
+// console.log(savedToDos);
 if (savedToDos !== null) {
   // string으로 된 savedTodos를 JavaScript object로 바꿔줌
   const parsedToDos = JSON.parse(savedToDos);
