@@ -12,5 +12,5 @@ bgImage.src = `img/${chosenImage}`;
 // console.log(bgImage);
 
 // appendchild는 가장 뒤에, prepend는 가장 위에 추가
-document.body.appendChild(bgImage);
-// document.body.prepend(bgImage);
+// document.body.appendChild(bgImage);
+document.body.prepend(bgImage);
